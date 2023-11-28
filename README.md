@@ -24,4 +24,24 @@
     - !!!! if Context is changing the component will reexecuted by React
 
 
+### useReducer
+A function that reduce one or more complex values to a simpler one
 
+- in XXX-context import useReducer
+- execute it
+  const [shoppingCartState, shoppingCardDispatch] = useReducer();
+  useReducer give two cont - first is the state(shoppingCartState) , second - actions(shoppingCardDispatch)
+- Outside of the Provider component create new function shoppingCardReducer, which accept two parameters - state and action,
+which has to return updated state
+- connect reducer Function to usReducer hook.
+    - For this pass the pointer to this function shoppingCardReducer, as the first argument to udeReducer
+    - Pass the initial state as the second argument
+- dispatch Action
+    shoppingCardDispatch({
+                 type: 'ADD_ITEM',   //type of action
+                 payload : id        // payload passed to action
+             });
+- in shoppingCardReducer describe the action has to be performed
+        if(action.type === 'ADD_ITEM'){
+             //update sate
+         }
