@@ -1,3 +1,5 @@
+### To start app `npm run dev`
+
 - Create folder Store - (convention to save the Context in this folder);
 - Create XXX-context.js
 - there export  import {createContext} from 'react'
@@ -7,7 +9,7 @@
         - import {XXXX} from './store/xxxx-context';
         - Crate and Export <CartContextProvider>{children} </<CartContextProvider>
             - Wrap it with context;
-              <CartContext.Provider value={{items: []}, someHandler: hadler}></XXXX.Provider>
+              <CartContext.Provider value={{items: []}, someHandler: handler}></XXXX.Provider>
               value is REQIURED
 
 - Consuming the context
@@ -45,3 +47,7 @@ which has to return updated state
         if(action.type === 'ADD_ITEM'){
              //update sate
          }
+- In the component we need data from context
+    - import { XXX } from '../store/XXX-context';
+     - import { useContext } from 'react';
+     - const { items, updateItemQuantity } = useContext(XXX);
